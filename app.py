@@ -53,11 +53,6 @@ def handle_form():
 def send_css(filename):
     return static_file(filename, root='static/css')
 
-@error(404)
-def error404(error):
-    return template('error', error_msg='404 error. Nothing to see here')
-
-
 if os.environ.get('APP_LOCATION') == 'heroku':
     run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
 else:
